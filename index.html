@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanzas Alternativas 2008</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #68BBE3; /* Baby Blue */
+            color: #003060; /* Navy Blue for text */
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #055C9D; /* Blue */
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .concept {
+            background-color: #0E86D4; /* Blue Grotto */
+            border: 1px solid #055C9D; /* Blue */
+            border-radius: 4px;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            color: white;
+        }
+        .concept:hover {
+            background-color: #055C9D; /* Blue */
+        }
+        #conceptDescription {
+            background-color: #68BBE3; /* Baby Blue */
+            border: 1px solid #0E86D4; /* Blue Grotto */
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 20px;
+            color: #003060; /* Navy Blue */
+        }
+        .accordion {
+            background-color: #0E86D4; /* Blue Grotto */
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+        }
+        .active, .accordion:hover {
+            background-color: #055C9D; /* Blue */
+        }
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+            border-left: 1px solid #0E86D4; /* Blue Grotto */
+            border-right: 1px solid #0E86D4; /* Blue Grotto */
+            border-bottom: 1px solid #0E86D4; /* Blue Grotto */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Conceptos clave de Finanzas Alternativas 2008</h1>
+        
+        <div class="grid">
+            <div class="concept" onclick="showDescription('Crisis financiera', 'Colapso del sistema financiero global en 2008.')">Crisis financiera</div>
+            <div class="concept" onclick="showDescription('Burbuja inmobiliaria', 'Aumento insostenible de los precios de las viviendas.')">Burbuja inmobiliaria</div>
+            <div class="concept" onclick="showDescription('Hipotecas subprime', 'Préstamos de alto riesgo a prestatarios con baja calificación crediticia.')">Hipotecas subprime</div>
+            <div class="concept" onclick="showDescription('Derivados financieros', 'Instrumentos financieros complejos basados en otros activos.')">Derivados financieros</div>
+            <div class="concept" onclick="showDescription('Lehman Brothers', 'Banco de inversión cuya quiebra marcó el inicio de la crisis.')">Lehman Brothers</div>
+            <div class="concept" onclick="showDescription('Rescates bancarios', 'Intervenciones gubernamentales para evitar el colapso de los bancos.')">Rescates bancarios</div>
+            <div class="concept" onclick="showDescription('Regulación financiera', 'Nuevas normas para prevenir futuras crisis.')">Regulación financiera</div>
+            <div class="concept" onclick="showDescription('Recesión global', 'Periodo de contracción económica mundial tras la crisis.')">Recesión global</div>
+        </div>
+
+        <div id="conceptDescription"></div>
+
+        <h2>Ideas centrales del documento</h2>
+        <p>La crisis financiera de 2008 fue un evento global desencadenado por la burbuja inmobiliaria en Estados Unidos y el colapso del mercado de hipotecas subprime. Este evento expuso las debilidades del sistema financiero, incluyendo la falta de regulación adecuada y el uso excesivo de derivados financieros complejos.</p>
+        <p>Las consecuencias de la crisis fueron profundas y duraderas, llevando a una recesión global, rescates bancarios masivos y cambios significativos en la regulación financiera. La quiebra de Lehman Brothers se convirtió en un símbolo de la crisis, marcando un punto de inflexión en la confianza del mercado y llevando a una reevaluación de las prácticas financieras a nivel mundial.</p>
+
+        <h2>Preguntas clave</h2>
+        <button class="accordion">¿Cuál fue la causa principal de la crisis financiera de 2008?</button>
+        <div class="panel">
+            <p>La causa principal fue la burbuja inmobiliaria y las hipotecas subprime.</p>
+        </div>
+
+        <button class="accordion">¿Qué papel jugaron los derivados financieros en la crisis?</button>
+        <div class="panel">
+            <p>Los derivados aumentaron la complejidad y el riesgo en el sistema financiero.</p>
+        </div>
+
+        <button class="accordion">¿Cómo afectó la quiebra de Lehman Brothers al sistema financiero global?</button>
+        <div class="panel">
+            <p>La quiebra de Lehman Brothers desencadenó una crisis de confianza y liquidez en todo el sistema.</p>
+        </div>
+
+        <button class="accordion">¿Qué medidas tomaron los gobiernos para enfrentar la crisis?</button>
+        <div class="panel">
+            <p>Los gobiernos implementaron rescates bancarios y nuevas regulaciones financieras.</p>
+        </div>
+
+        <button class="accordion">¿Cuáles fueron las consecuencias a largo plazo de la crisis de 2008?</button>
+        <div class="panel">
+            <p>Las consecuencias incluyeron una recesión global y cambios en la regulación financiera.</p>
+        </div>
+    </div>
+
+    <script>
+        function showDescription(title, description) {
+            document.getElementById('conceptDescription').innerHTML = `<h3>${title}</h3><p>${description}</p>`;
+        }
+
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+
+    </script>
+    <footer>
+        Creado por:Maryi Adriana Cadrazco Suárez
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+          <img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" />
+        </a>
+        <br>
+        Esta obra está bajo una
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Licencia Creative Commons Atribución-NoComercial 4.0 Internacional</a>.
+      </footer>    
+    </body>
+</html>
